@@ -1,14 +1,14 @@
-FROM node:11.8-stretch
+FROM node:current-stretch
 
 # Create working directory
-RUN mkdir -p /api && \
-  chown node:node /api
+RUN mkdir -p /app && \
+  chown node:node /app
+
+# Install Feathers CLI globally via yarn
+RUN su node && yarn global add @feathersjs/cli
 
 # Use the "node" user
 USER node
 
-# Install Feathers CLI globally via yarn
-RUN yarn global add @feathersjs/cli
-
 # Set the working directory
-WORKDIR /api
+WORKDIR /app

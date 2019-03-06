@@ -1,11 +1,13 @@
 # feathers-cli
 FeathersJS CLI Docker Image
 
-## Usage
-`docker run -it --rm -v $(PWD)/app feathers-cli:latest feathers generate app`
+## Example Usage
+`docker run -it --rm -v $(pwd)/app feathers-cli:latest feathers generate app`
 
 ## Notes
+- Base image is `node:current-stretch`
 - Everything is ran as the `node` user
+- `/app` is the default `WORKDIR`
 - `yarn` is the package manager used to install `@feathersjs/cli` globally
 
 ## Credits
